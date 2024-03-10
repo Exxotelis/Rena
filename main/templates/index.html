@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<body>
+    {% block content %}
+    <!-- home section -->
+    <div id="home">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5 col-sm-3"></div>
+                <div class="col-md-7 col-sm-9">
+                    <h3>Welcome to</h3>
+                    <h1>Rena London</h1>
+                    <h2>Where Style Meets Craftsmanship</h2>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- divider section -->
+    <div class="divider">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-sm-6">
+                    <div class="divider-wrapper divider-one">
+                        <i class="fa fa-cut"></i> 
+                        <h2>Exquisite Craftsmanship</h2>
+                        <p>Elevate your style with exquisite craftsmanship at Rena London. Our dedicated artisans meticulously craft each garment, ensuring unparalleled quality and attention to detail.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="divider-wrapper divider-two">
+                        <i class="fa fa-diamond"></i> 
+                        <h2>Bespoke Elegance</h2>
+                        <p>Indulge in bespoke elegance at Rena London. Each creation is meticulously tailored to reflect your unique personality and style, resulting in a garment that exudes sophistication and charm.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-12">
+                    <div class="divider-wrapper divider-three">
+                        <i class="fa fa-heart"></i> 
+                        <h2>Personalized Service</h2>
+                        <p>Experience personalized service like no other at Rena London. Our dedicated team is committed to exceeding your expectations, providing attentive support and guidance every step of the way.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- about section -->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-12">
+                    <img src="static/images/cloth.jpg" class="img-responsive" alt="about img">
+                </div>
+                    <div class="col-md-6 col-sm-12 about-des">
+                        <h2>Elevate Your Style with Rena London</h2>
+                        <p>Discover exquisite craftsmanship and personalized service at Rena London. Our skilled artisans create garments that reflect your individuality and sophistication.</p>
+                        <a href="about.html" class="btn btn-default">Discover Our Collections</a>
+                    </div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <!-- portfolio section -->
+    <div id="portfolio">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-offset-2 col-md-8 col-sm-12">
+                    <h2>Discover Our Latest Creations</h2>
+                    <p>Explore our recent projects at REAN LONDON and witness the artistry and craftsmanship that goes into each garment. From bespoke suits to handcrafted dresses, our creations are tailored to perfection to reflect your unique style.</p>
+                </div>
+
+            </div>
+            
+            <div class="row mt30">
+                
+                {% for image in images %}
+                    <div class="col-md-4 col-sm-4 col-xs-6">
+                        <a href="{% static 'images/portfolio/' %}{{ image }}" data-lightbox-gallery="portfolio-gallery"><img src="{% static 'images/portfolio/' %}{{ image }}" alt="portfolio img"></a>
+                    </div>
+                {% endfor %}
+                <div class="col-md-12 col-sm-12">
+                    <a rel="nofollow" href="http://www.reanlondon.com/tag/darkgray" class="btn btn-default">View More</a>
+                </div>
+            </div>
+        </div>
+    </div>		
+
+
+    {% endblock %}
+</body>
+</html>
