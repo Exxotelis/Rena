@@ -11,7 +11,7 @@ cmds = [
 ]
 
 [start]
-cmd = 'gunicorn myproject.wsgi:application --bind 0.0.0.0:8000'  # Start Gunicorn server
+cmd = 'gunicorn Rean.wsgi:application --bind 0.0.0.0:8000'  # Start Gunicorn server
 
 
 # Build Settings
@@ -22,7 +22,7 @@ cmd = 'gunicorn myproject.wsgi:application --bind 0.0.0.0:8000'  # Start Gunicor
 
 # Run Settings
 [run]
-  web = "gunicorn rena.wsgi:application"
+  web = "gunicorn Rean.wsgi:application"
 
 # Environment Variables
 [env]
