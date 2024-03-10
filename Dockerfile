@@ -1,5 +1,5 @@
-# Use an official Python runtime as a parent image
-FROM python:3.9
+# Use a specific Python version
+FROM python:3.9.10
 
 # Set environment variables
 ENV PYTHONDONTWRITEBYTECODE 1
@@ -8,11 +8,14 @@ ENV PYTHONUNBUFFERED 1
 # Set the working directory in the container
 WORKDIR /code
 
-# Copy the current directory contents into the container at /code
-COPY . /code/
+# Copy just the requirements file first to leverage Docker cache
+COPY ./requirements.txt /code/requirements.txt
 
-# Install any needed packages specified in requirements.txt
+# Install dependencies
 RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy the rest of the application code into the container
+COPY . /code/
 
 # Expose port 8000 to the outside world
 EXPOSE 8000
