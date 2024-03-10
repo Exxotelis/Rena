@@ -1,4 +1,18 @@
 # Railway Config File for Django Project
+# nixpacks.toml
+
+[phases.setup]
+nixPkgs = ['python39', 'postgresql', 'git']  # Define required Nix packages
+
+[phases.build]
+cmds = [
+    'pip install -r requirements.txt',  # Install Python dependencies
+    'python manage.py collectstatic --noinput',  # Collect static files
+]
+
+[start]
+cmd = 'gunicorn myproject.wsgi:application --bind 0.0.0.0:8000'  # Start Gunicorn server
+
 
 # Build Settings
 [build]
