@@ -1,5 +1,5 @@
 # Use a specific Python version
-FROM python:3.9.10
+FROM python:3.8
 
 # Set environment variables
 ENV PYTHONDONTWRITEBYTECODE 1

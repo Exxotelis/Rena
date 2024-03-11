@@ -8,7 +8,7 @@ Technologies Used
 Contributing
 License
 Installation
-Clone the repository: git clone https://github.com/your-username/your-repository.git
+Clone the repository: git clone https://github.com/exxotelis/Rena
 Navigate to the project directory: cd project-directory
 Install dependencies: pip install -r requirements.txt
 Usage
